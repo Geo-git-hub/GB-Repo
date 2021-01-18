@@ -10,5 +10,5 @@ while not user_seconds.isdigit():
 user_seconds = int(user_seconds)
 seconds = retur_format(user_seconds % 60)
 minutes = retur_format((user_seconds // 60) % 60)
-hours = retur_format((user_seconds // 60) // 60)
+hours = (user_seconds // 60) // 60
 print(f"\nВы ввели: {user_seconds} секунд, что составит {hours}:{minutes}:{seconds} ")
