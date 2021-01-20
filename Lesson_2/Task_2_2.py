@@ -7,7 +7,7 @@ user_char = input("Вводите элементы массива по одно�
 user_list = []
 result_list = []
 
-while not user_char == " ":
+while not user_char == ' ':
     user_list.append(user_char)
     user_char = input("Вводите элементы массива по одному. Для заверщения введите 'пробел' ")
 
@@ -16,8 +16,8 @@ def revers_func(list_to_revers, count_chars):
     i = 0
     revers_list = []
     while i < count_chars:
-        revers_list.append(user_list[i + 1])
-        revers_list.append(user_list[i])
+        revers_list.append(list_to_revers[i + 1])
+        revers_list.append(list_to_revers[i])
         i += 2
     return revers_list
 
