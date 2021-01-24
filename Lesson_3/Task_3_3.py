@@ -24,12 +24,13 @@ def my_func(number_1, number_2, number_3):
     max_1 = max(result)
     result.remove(max_1)
     max_2 = max(result)
-    result =  max_1 + max_2
+    result = max_1 + max_2
 
     # # второй способ
     # result = sum(result) - min(result)
 
     return result
+
 
 user_input_1 = check_input(input("Введите первое число: "))
 user_input_2 = check_input(input("Введите второе число: "))
