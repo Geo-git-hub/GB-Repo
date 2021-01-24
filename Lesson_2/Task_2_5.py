@@ -14,6 +14,10 @@ while not user_input.isdigit():
     user_input = input("Введите рейтинг (целое число): ")
 
 rating_list.append(int(user_input))
+# вывод списка без его изменения
 print(f"Вы ввели рейтинг {user_input}. Результат: {sorted(rating_list,reverse=True)}")
-
-
+print(rating_list)
+# с изменением исходного списка
+rating_list.sort(reverse=True)
+print(f"Вы ввели рейтинг {user_input}. Результат: {rating_list}")
+print(rating_list)
