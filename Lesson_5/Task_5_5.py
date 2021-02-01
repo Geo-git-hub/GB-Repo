@@ -14,8 +14,8 @@ with open('user_file_5.txt', 'w+') as user_file:
     user_file.writelines(line)
     user_file.seek(0)
 
-    content = user_file.readlines()
-    content = content[0].split(' ')
+    content = user_file.read()
+    content = content.split(' ')
 
     element_sum = sum(float(el) for el in content[:-1])
 
