@@ -15,16 +15,13 @@ from time import sleep
 
 
 class TrafficLight:
-    __color = ['красный', 'желтый', 'зелёный']
+    __color = {'красный': 5, 'желтый': 2, 'зелёный': 5}
 
     def running(self, running_times=3):
         while running_times > 0:
-            print(f'Сейчас {TrafficLight.__color[0]} сигнал светофора.')
-            sleep(5)
-            print(f'Сейчас {TrafficLight.__color[1]} сигнал светофора.')
-            sleep(2)
-            print(f'Сейчас {TrafficLight.__color[2]} сигнал светофора.')
-            sleep(5)
+            for element in TrafficLight.__color:
+                print(f'Сейчас {element} сигнал светофора.')
+                sleep(TrafficLight.__color[element])
             running_times -= 1
 
 
