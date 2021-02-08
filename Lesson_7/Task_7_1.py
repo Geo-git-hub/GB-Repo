@@ -17,17 +17,21 @@
 class Matrix:
     def __init__(self, *args):
         self.matrix = args
+        self.dimension()
 
+    def dimension(self):
+        rows = 0
+        columns = 0
         for el_row in self.matrix:
-            self.rows = len(el_row)
+            rows = len(el_row)
             columns = len(el_row[0])
             for el in el_row[1:]:
                 if len(el) == columns:
-                    self.columns = len(el)
+                    columns = len(el)
                 else:
                     print(f'некорректная матрица, число столбцов в строках не совпадают {self.matrix}')
 
-        self.dimension = self.rows * self.columns
+        return rows, columns
 
     def __str__(self):
         answer = ''
@@ -37,7 +41,7 @@ class Matrix:
         return f'{answer}'
 
     def __add__(self, other):
-        if self.dimension != other.dimension:
+        if self.dimension() != other.dimension():
             return f'у матриц разные размерности, операция сложение невозможна'
         else:
             new_matrix = []
@@ -48,7 +52,7 @@ class Matrix:
                     new_matrix_row.append(self.matrix[0][i][j] + other.matrix[0][i][j])
                 new_matrix.append(new_matrix_row)
 
-        return new_matrix
+        return Matrix(new_matrix)
 
 
 matrix_1 = Matrix([
@@ -76,5 +80,19 @@ matrix_3 = Matrix([
 print(matrix_3)
 print('=============================================================')
 
-print(f'Сложение матриц 1 и 2: {matrix_1 + matrix_2}')
-print(f'Сложение матриц 1 и 3: {matrix_1 + matrix_3}')
+matrix_4 = Matrix([
+    [3, 5, 8],
+    [8, 3, 6]
+])
+print(matrix_4)
+print('=============================================================')
+
+matrix_5 = matrix_1 + matrix_4
+print(f'Сложение матриц 1 и 4: {matrix_5}')
+
+matrix_6 = matrix_1 + matrix_3
+
+print(f'Сложение матриц 1 и 3:\n{matrix_6}')
+
+# print(f'{matrix_1 + matrix_3}')
+
