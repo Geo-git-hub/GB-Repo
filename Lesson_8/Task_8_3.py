@@ -26,7 +26,7 @@ class CheckIfNumber(Exception):
         while (user_input := input('Введите данные для списка, '
                                    'для завершения работы скрипта введите "stop": ').lower()) != 'stop':
             try:
-                if not (chek_input := re.match(num_format, user_input)):
+                if not re.match(num_format, user_input):
                     raise CheckIfNumber('Вы ввели строковое значение, данный елемент не добавится в список')
             except CheckIfNumber as error_txt:
                 print(error_txt)
@@ -36,4 +36,3 @@ class CheckIfNumber(Exception):
 
 
 print(CheckIfNumber.create_list_number())
-
